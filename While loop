@@ -1,0 +1,26 @@
+public class WhileLoop {
+    public static void main(String[] args) {
+//*********************************************************************
+        int count = 0;
+        while (count != 6) {
+            System.out.println("Count is " + count);
+            count++;
+        }
+//*********************************************************************
+        int count2 = 2;
+        while (true) {
+            if (count2 == 6)
+                break;
+                System.out.println("Count2 is " + count2);
+                count2++;
+        }
+//*********************************************************************
+        // do-while loop is always executes once
+        count = 3;
+        do {
+            System.out.println("Count value is :" + count);
+            count++;
+        }
+        while (count != 5);
+    }
+}
