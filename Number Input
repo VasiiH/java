@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Number_Input {
+    public static void main(String[] args) {
+        hasNextInt(0);
+
+    }
+
+    public static void hasNextInt(int number){
+        Scanner scanner = new Scanner(System.in);
+
+        int count= 1;
+
+        while (count<=10)
+        {
+            int n;
+            System.out.println("Enter any integer number");
+            boolean hasNextInt = scanner.hasNextInt();
+
+            if (hasNextInt) {
+                n = scanner.nextInt();
+                System.out.println("Number" + count+" is " + n);
+            }
+            else {
+                System.out.println("Invalid Integer");
+                continue;
+            }
+            count++;
+        }
+        scanner.close();
+
+    }
+}
