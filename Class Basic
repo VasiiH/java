@@ -1,0 +1,60 @@
+package com.vasi;
+
+public class Cars {
+    public String model; // fields
+    private int doors;  // these fields are private
+    private int wheels;
+    private String color;
+
+    public String model2; // fields
+    public int doors2;   // these fields are public
+    public int wheels2;
+    public String color2;
+
+
+    public void setModel(String model) {
+        String validModel = model.toLowerCase();
+        if (validModel.equals("r8") || validModel.equals("r10")) {
+            this.model = model;
+        } else {
+            this.model = "Unknown";
+        }
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public String getInfo() {
+        return ("Model " + model2 + ", doors " + doors2 + ", Wheels " + wheels2 + ", Color " + color2);
+    }
+}
+
+#########################################################################################################
+
+package com.vasi;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Cars audi = new Cars();
+        audi.setModel("R8");
+        audi.setColor("Black");
+        System.out.println("Model is " + audi.getModel()+ ", It's " + audi.getColor()+ " Color");
+
+        Cars bmw = new Cars();
+        bmw.model2="abcd";
+        bmw.color2="white";
+        bmw.doors2=4;
+        bmw.wheels2=4;
+        System.out.println(bmw.getInfo());
+    }
+}
