@@ -1,0 +1,26 @@
+public class MethodOverloading {
+    public static void main(String[] args) {
+
+        int newScore = CalculateScore("vasiharan",100);
+        System.out.println("New Score is " + newScore);
+
+        CalculateScore(500);
+
+        CalculateScore();
+    }
+
+    public static int CalculateScore(String playername, int score){
+        System.out.println(playername + " is scored " + score);
+        return score * 100;
+    }
+
+    public static int CalculateScore(int score){
+        System.out.println("Unnamedplayer is scored " + score);
+        return score * 100;
+    }
+
+    public static int CalculateScore(){
+        System.out.println("No plyer no score " );
+        return 0;
+    }
+}
