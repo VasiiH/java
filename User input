@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class UserInput {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        int N = scanner.nextInt();
+
+        if (N >= 1 && N <= 25){
+
+
+        for (int j = 0; j < N; j++) {
+            int X = scanner.nextInt();
+
+            int Y = scanner.nextInt();
+
+            if (X >= 1 && X <= 1000 && Y >= 1 && Y <= 1000) {
+
+
+                int flag;
+                int count = 0;
+
+                while (X < Y) {
+                    flag = 0;
+
+                    for (int i = 2; i <= X / 2; i++) {
+                        if (X % i == 0) {
+                            flag = 1;
+                            break;
+                        }
+                    }
+
+                    if (flag == 0)
+                        count = count + 1;
+
+
+                    ++X;
+
+
+                }
+
+                System.out.println(count - 1);
+            }
+        }
+
+        }
+
+    }
+
+
+
+}
