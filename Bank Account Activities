@@ -1,0 +1,104 @@
+package com.vasi;
+
+public class Account {
+    private String number;
+    private double balance;
+    private String name;
+    private String address;
+    private int mobileNumber;
+
+    public Account(){
+        //we can call one constructor from another constructor through the parameters
+        //if an empty constructor is called withouts any parameters perhaps we want to
+        //create the object with the some default values
+        this("123456",150000,"no_name","no_address",123);
+        System.out.println("Welocome to your account "+ this.name);
+    }
+
+    public Account(String number,double balance,String name,String address,int mobileNumber){
+        System.out.println("Account constructor with parameter called");
+        this.number=number;
+        this.balance=balance;
+        this.name=name;
+        this.address=address;
+        this.mobileNumber=mobileNumber;
+    }
+
+    public void deposit(double depositeAmount){
+        this.balance += depositeAmount;
+        System.out.println("Deposit of " + depositeAmount + " is done, Current Balance is " + this.balance);
+    }
+
+
+    public void withdrawal(double withdrawalAmount){
+        if (this.balance - withdrawalAmount < 0){
+            System.out.println( this.balance + " is your current account balance, you can't withdrawal the amount of "+ withdrawalAmount);
+        }
+        else {
+            this.balance-=withdrawalAmount;
+            System.out.println("Withdrawal of "+ withdrawalAmount+" is done, Current account balance is "+this.balance);
+        }
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(int mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+}
+
+###########################################################################################################
+
+package com.vasi;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Account vasi = new Account();
+        Account vaishu = new Account("12345698",125000,"Vaishnavi","Hatton",076747);
+
+        System.out.println("hii " + vaishu.getName()+", your account balance is "+vaishu.getBalance());
+        System.out.println("hii " + vasi.getName()+", your account balance is "+vasi.getBalance());
+
+
+        vasi.withdrawal(1000);
+        vasi.deposit(100000);
+        vasi.withdrawal(200000);
+        vasi.deposit(100000);
+        vasi.withdrawal(20000);
+    }
+}
