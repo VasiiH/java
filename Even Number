@@ -1,0 +1,35 @@
+public class Even {
+    public static void main(String[] args) {
+
+        //System.out.println(isEvenNumber(5));
+
+        int number = 1;
+        int EndNumber = 100;
+        int EvenNumberCount = 0;
+
+
+        while (number <= EndNumber) {
+            number++;
+            if (!isEvenNumber(number)) {
+//                System.out.println("Odd number " + number);
+                continue;
+            }
+            System.out.println("Even number " + number);
+            EvenNumberCount++;
+            if (EvenNumberCount == 5)
+            {
+                break;
+            }
+        }
+        System.out.println("Total even number fount is "+ EvenNumberCount);
+    }
+
+    public static boolean isEvenNumber(int n) {
+        if (n % 2 == 0) {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+}
