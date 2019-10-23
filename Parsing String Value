@@ -1,0 +1,18 @@
+public class Parsing_String_Value {
+2
+    public static void main(String[] args) {
+
+        String numberAsString = "2019";
+        System.out.println(numberAsString);
+
+        int IntNumber = Integer.parseInt(numberAsString);
+        System.out.println(++IntNumber);
+
+        double DoubleNumber = Double.parseDouble(numberAsString);// wrapper class
+        System.out.println(++DoubleNumber);
+
+        float FloatNumber = Float.parseFloat(numberAsString);//wrapper class
+        System.out.println(++FloatNumber);
+
+    }
+}
