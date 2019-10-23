@@ -1,0 +1,28 @@
+public class SumOfDigits {
+    public static void main(String[] args) {
+
+
+        System.out.println(DigitSum(125));
+        System.out.println(DigitSum(-125));
+        System.out.println(DigitSum(0));
+        System.out.println(DigitSum(100));
+        System.out.println(DigitSum(1000002));
+
+    }
+
+    public static int DigitSum(int num) {
+        if (num < 10) {
+            return -1;
+        }
+
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10; // 125 % 10 = 5, 12 % 10 = 2, 1 % 10 = 1.
+            sum += digit; // 5 + 0 = 0, 5 + 2 = 7, 7 + 1 = 8.
+            num /= 10;// 125 / 10 = 12, 12 / 10 = 1, 1 / 10 = 0;
+            // if num greater than 0 only the loop will execute
+
+        }
+        return sum;
+    }
+}
